@@ -43,6 +43,6 @@ export function saveCourse(course) {
     }).catch(err => {
       dispatch(ajaxCallError(err));
       throw(err);
-    })
-  }
+    });
+  };
 }

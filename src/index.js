@@ -1,3 +1,4 @@
+/*eslint-disable import/default */
 import 'babel-polyfill'; // features babel can't transpile. -- best to choose just what is needed instead of the entire package
 import React from 'react';
 import { render } from 'react-dom'; // render function for the browser
