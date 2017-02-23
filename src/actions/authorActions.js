@@ -1,5 +1,6 @@
 import AuthorApi from '../api/mockAuthorApi';
 import * as types from './actionTypes';
+import {beginAjaxCall} from './ajaxStatusActions';
 
 export function loadAuthorsSuccess(authors) {
   return {
@@ -10,6 +11,7 @@ export function loadAuthorsSuccess(authors) {
 
 export function loadAuthors() {
   return function(dispatch) {
+    dispatch(beginAjaxCall());
     return AuthorApi.getAllAuthors().then(authors => {
       dispatch(loadAuthorsSuccess(authors));
     }).catch(err => {
@@ -17,3 +19,8 @@ export function loadAuthors() {
     });
   };
 }
+
+/*
+  Importing beginAjaxCall here to allow for optional loading display.
+  In a large app, it would likely make sense to centralize in the api
+ */
