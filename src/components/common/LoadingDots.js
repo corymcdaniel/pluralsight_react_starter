@@ -10,7 +10,7 @@ class LoadingDots extends React.Component {
     this.interval = setInterval(() => {
       this.setState({
         frame: this.state.frame + 1
-      })
+      });
     }, this.props.interval);
   }
 
@@ -25,7 +25,7 @@ class LoadingDots extends React.Component {
       text += '.';
       dots--;
     }
-    return <span {...this.props}>{text}&nbsp;</span>
+    return <span {...this.props}>{text}&nbsp;</span>;
   }
 }
 
